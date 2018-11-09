@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: noops
+spec:
+  rules:
+  - host: noops.iostat.de
+    http:
+      paths:
+      - backend:
+          serviceName: noops
+          servicePort: 8080
+        path: /
