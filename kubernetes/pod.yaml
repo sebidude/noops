@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: noops-sebi
+  namespace: sebi
+spec:
+  containers:
+  - name: noops
+    image: sebidude/noops:1.0.0-085b084
+    resources:
+      limits:
+        memory: "32Mi"
+      requests:
+        memory: "16Mi"
+    args: ["-c", "/config/config.yaml"]
