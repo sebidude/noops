@@ -8,7 +8,6 @@ import (
 	"os/signal"
 	"sync"
 	"syscall"
-	"team-rex/magiclinker/logging"
 
 	"github.com/alecthomas/kingpin"
 	"github.com/gin-gonic/gin"
@@ -50,7 +49,7 @@ func main() {
 		log.Fatalln("Cannot get hostname!")
 	}
 
-	logger := new(logging.Logger)
+	logger := new(Logger)
 	if len(appConfig.LogFile) > 0 {
 		logfile, err := os.OpenFile(appConfig.LogFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0660)
 		if err != nil {
@@ -70,7 +69,7 @@ func main() {
 	defaultRouter := router.Group("/")
 	aliveRouter := router.Group("/alive")
 
-	defaultRouter.Use(logging.GinLogger())
+	defaultRouter.Use(GinLogger())
 
 	log.Println("=====  NoopsServer  =====")
 	log.Printf("Builddate: %s", builddate)

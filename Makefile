@@ -14,7 +14,7 @@ LDFLAGS_WINDOWS := '-extldflags "-static" -s -w $(GITCOMMIT) $(VERSION) $(BUILDT
 all: info clean build
 
 clean:
-	@rm -f noops
+	rm -f $(APPNAME)-$(VERSIONTAG)-$(GITCOMMITHASH) $(APPNAME)
 
 info: 
 	@echo - appname:   $(APPNAME)
