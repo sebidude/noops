@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: noops
+spec:
+  selector:
+    app: noops
+  ports:
+  - name: noops
+    protocol: TCP
+    port: 8080
+    targetPort: 4242

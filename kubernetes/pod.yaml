@@ -1,8 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: noops-sebi
-  namespace: sebi
+  name: noops
+  labels:
+    app: noops
 spec:
   containers:
   - name: noops
