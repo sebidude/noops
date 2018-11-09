@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: noops
 spec:
+  type: NodePort
   selector:
     app: noops
   ports:
@@ -10,3 +11,4 @@ spec:
     protocol: TCP
     port: 8080
     targetPort: 4242
+    nodePort: 32042
