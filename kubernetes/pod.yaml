@@ -13,3 +13,10 @@ spec:
       requests:
         memory: "16Mi"
     args: ["-c", "/config/config.yaml"]
+    volumeMounts:
+    - name: config-vol
+      mountPath: /config
+  volumes:
+    - name: config-vol
+      configMap:
+        name: noops-config
